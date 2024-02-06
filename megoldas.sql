@@ -27,7 +27,13 @@ ORDER BY jatekok.evszam DESC
 LIMIT 5
 
 -- 14.feladat
-
+SELECT
+  sportagak.sportag,
+  COUNT(versenyszamok.versenyszam) AS versenyszamok
+FROM versenyszamok
+  INNER JOIN sportagak
+    ON versenyszamok.sportagId = sportagak.id
+GROUP BY sportagak.sportag
 
 -- 15.feladat
 
