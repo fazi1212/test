@@ -36,4 +36,19 @@ FROM versenyszamok
 GROUP BY sportagak.sportag
 
 -- 15.feladat
-
+SELECT
+  jatekok.sorszam AS jatek,
+  eredmenyek.helyezes AS hely,
+  sportagak.sportag,
+  olimpikonok.nev AS bajnokok
+FROM eredmenyek
+  INNER JOIN jatekok
+    ON eredmenyek.jatekId = jatekok.sorszam
+  INNER JOIN versenyszamok
+    ON eredmenyek.versenyszamId = versenyszamok.id
+  INNER JOIN sportagak
+    ON versenyszamok.sportagId = sportagak.id
+  INNER JOIN olimpikonok
+    ON eredmenyek.olimpikonId = olimpikonok.id
+WHERE olimpikonok.nev LIKE '%,%'
+ORDER BY hely, sportagak.sportag, jatek
