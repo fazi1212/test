@@ -18,7 +18,13 @@ DELETE
 WHERE sportag = 'Lovaglás'
 
 -- 13.feladat
-
+SELECT
+  jatekok.evszam,
+  jatekok.varos
+FROM jatekok
+WHERE jatekok.evszam < 2021
+ORDER BY jatekok.evszam DESC
+LIMIT 5
 
 -- 14.feladat
 
