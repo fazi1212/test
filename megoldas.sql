@@ -13,7 +13,9 @@ SET versenyszam = 'vegyespáros'
 WHERE id = 9
 
 -- 12.feladat
-
+DELETE
+  FROM sportagak
+WHERE sportag = 'Lovaglás'
 
 -- 13.feladat
 
