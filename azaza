@@ -11,3 +11,5 @@ grep -w -n $new_pattern $filename
 else
 echo "Error! Pattern did not match."
 fi
+ez mi a fasz?
+
