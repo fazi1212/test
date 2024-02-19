@@ -1,0 +1,34 @@
+ls - listáz
+cd
+cd ..
+nano - létrehoz/megnyit
+./ - megnyit
+touch - fájl létrehoz
+
+hostnamectl - system info
+
+sudo apt install XXX
+sudo apt upgrade -y
+sudo apt-get upgrade -y
+
+sudo adduser XXX
+sudo addgroup YYY
+
+compgen -u - felhasználó listáz
+geten group - listáz
+
+sudo usermod -aG XXX YYY - hozzáad
+
+wget - URL letöltés
+
+mkdir XXX - könyvtár létrehoz
+
+chmod - Owner  Group  Public
+        Read 4
+		Write 2
+		Execute 1
+
+rm XXX - delete	
+rm -r -f mappa név - könyvtár törlés
+	
+cp XXX /home/ZZZ/new file.valami
