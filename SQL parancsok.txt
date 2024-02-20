@@ -1,0 +1,66 @@
+query - lekérdezés
+
+SELECT * FROM Customers; -kiválasztás
+
+INSERT INTO Customers (CustomerName,ContactName) VALUES (' ',' ') -behelyezés
+
+DELETE FROM Customers; -MINDENT TÖRÖL!
+DELETE FROM Customers WHERE CustomerID=11
+mi lesz ha visszaírom?
+ 
+UPDATE Customers SET CustomerName = 'sd' WHERE CustomerID=11; - frissítés
+UPDATE Customers SET CustomerName = 'sd', Address='ss' WHERE CustomerID=11;
+
+C Create 	INSERT INTO /AB létrehozás
+R Read		SELECT * FROM 
+U Update	UPDATE
+D Delete	DELETE
+4 alapvető fun.
+
+SELECT * FROM Customers WHERE City = 'A' OR City = 'B'
+SELECT * FROM Customers WHERE City = 'A' AND ContactName = 'B'
+
+SELECT * FROM Customers  WHERE ContactName = 'NÉV'
+SELECT * FROM Customers WHERE ContactName LIKE 'NÉV%' %jel hova, SPACE? _ss%
+
+SELECT ContactName, City FROM Customers  WHERE City = 'A'ANDContactName LIKE '%NÉV%'
+
+
+SELECT DISTINCT Country FROM  Customers; - eltérő értékek, halmaz, statisztikához király, duplikáció kezelés
+SELECT COUNT(DISTINCT Country) FROM  Customers; "halmaz" száma
+SELECT COUNT(*) FROM  Customers;
+SELECT COUNT(Country) FROM  Customers;
+
+ORDER BY - sorba rendezés
+SELECT DISTINCT Country FROM  Customers ORDER BY Country;
+SELECT DISTINCT Country FROM  Customers WHERE Country not null ORDER BY Country;
+SELECT DISTINCT Country FROM  Customers WHERE Country not null ORDER BY Country ASC;
+SELECT DISTINCT Country FROM  Customers WHERE Country is not 'Austria' ORDER BY Country
+ASCendig - növekvő
+DESC - csökkenő
+not null <-> is null
+
+LIMIT x;
+
+SELECT * FROM Employees ORDER BY BirthDate LIMIT 1;
+SELECT MIN(BirthDate) FROM Employees; vagy MAX()
+
+SELECT * FROM Employees WHERE BirthDate IN ('',''); vagy NOT IN
+SELECT * FROM Employees WHERE BirthDate BETWEEN ss and aa
+
+SELECT LastName as 'veznév' FROM Employees WHERE BirthDate BETWEEN ss and aa
+
+SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate FROM Orders
+INNER JOIN  Customers ON Orders.CustomerID=Customers.CustomerID 
+INNER JOIN  Employees ON Orders.EmployeeID=Employees.EmployeeID;
+
+LEFT/ RIGHT/ (FULL)Outer
+
+Group by -csoportosítás
+having -csoporton belül adott elem
+
+exisis(allekérdezés)
+
+
+
+

@@ -1,0 +1,31 @@
+
+2.
+UPDATE nagydijak
+SET korokszama = 78
+WHERE nev Like 'Monaco%'
+
+3.
+SELECT vezeteknev, rajtszam, csapatnev, 2024-YEAR(szuletesidatum) AS eletkor
+FROM pilotak
+order by eletkor DESC
+
+4.
+SELECT nagydijak.nev,
+		pilotak.vezeteknev,
+		pilotak.keresztnev,
+		nagydijak.versenynap
+FROM eredmenyek join
+	nagydijak ON eredmenyek.nagydiid = nagydijak.id join
+	pilotak ON eredmenyek.pilotakid = pilotak.id
+WHERE eredmenyek.helyezes = 1
+order by nagydijak.versenynap;
+
+5.
+SELECT top 5 CONCAT(pilotak.keresztnev, ' ', pilotak. vezeteknev) as nev,
+		pilotak.csapatnev,
+		SUM(eredmenyek.pontszam) as osszpontszam
+FROM eredmenyek join
+	pilotak on eredmenyek.pilotaid = pilotak.id
+GROUP by pilotak.vezeteknev, pilotak.keresztnev, pilotak.csapatnev
+order by osszpontszam DESC
+
