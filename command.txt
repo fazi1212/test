@@ -16,7 +16,7 @@ sudo adduser XXX
 sudo addgroup YYY
 
 compgen -u - felhasználó listáz
-geten group - listáz
+getent group - listáz
 
 sudo usermod -aG XXX YYY - hozzáad
 
