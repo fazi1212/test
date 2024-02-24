@@ -1,18 +1,16 @@
-62.Compare the Contents of Two Given Files
-
 #!/bin/bash
 
-read -p "Enter the 1st file name: " file1
-read -p "Enter the 2nd file name: " file2
+read -p "irja be az első fájl nevét: " file1
+read -p "írj be a második fájl nevét: " file2
 
 if [ ! -f $file1 ] || [ ! -f $file2 ]
 then
-echo "Error! One of the files does not exists."
+echo "Hiba!! a fájl nem található!!"
 exit 1
 fi
 if cmp -s "$file1" "$file2"
 then
-echo "The Files $file1 and $file2 are identical."
+echo "A két fájl megeggyezik."
 else
-echo "The Files $file1 and $file2 are different."
+echo "A két fáj különböző."
 fi
