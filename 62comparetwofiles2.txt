@@ -1,0 +1,16 @@
+#!/bin/bash
+
+read -p "irja be az első fájl nevét: " file1
+read -p "írj be a második fájl nevét: " file2
+
+if [ ! -f $file1 ] || [ ! -f $file2 ]
+then
+echo "Hiba!! a fájl nem található!!"
+exit 1
+fi
+if cmp -s "$file1" "$file2"
+then
+echo "A két fájl megeggyezik."
+else
+echo "A két fáj különböző."
+fi
